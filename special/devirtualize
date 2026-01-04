@@ -1,0 +1,7 @@
+[conf]
+tools.build:cxxflags+=["-fdevirtualize-at-ltrans"]
+tools.build:cflags+=["-fdevirtualize-at-ltrans"]
+tools.build:sharedlinkflags+=["-fdevirtualize-at-ltrans"]
+tools.build:exelinkflags+=["-fdevirtualize-at-ltrans"]
+
+

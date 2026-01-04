@@ -1,0 +1,5 @@
+[conf]
+tools.build:cxxflags+=["-march=x86-64-v3", "-mtune=generic", "-mcx16"]
+tools.build:cflags+=["-march=x86-64-v3", "-mtune=generic", "-mcx16"]
+tools.build:sharedlinkflags+=["-mcx16"]
+tools.build:exelinkflags+=["-mcx16"]

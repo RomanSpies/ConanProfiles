@@ -1,0 +1,5 @@
+[conf]
+tools.build:cflags+=["-fno-plt"]
+tools.build:cxxflags+=["-fno-plt"]
+tools.build:sharedlinkflags+=["-fno-plt"]
+tools.build:exelinkflags+=["-fno-plt"]

@@ -1,0 +1,5 @@
+[conf]
+tools.build:cxxflags+=["-march=znver4", "-mtune=znver4", "-mcx16"]
+tools.build:cflags+=["-march=znver4", "-mtune=znver4", "-mcx16"]
+tools.build:sharedlinkflags+=["-mcx16"]
+tools.build:exelinkflags+=["-mcx16"]

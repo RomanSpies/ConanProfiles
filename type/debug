@@ -1,0 +1,9 @@
+[settings]
+build_type=Debug
+
+[conf]
+tools.build:cxxflags=["-O0", "-g", "-fuse-ld=mold"]
+tools.build:cflags=["-O0", "-g", "-fuse-ld=mold"]
+
+tools.build:sharedlinkflags=["-fuse-ld=mold"]
+tools.build:exelinkflags=["-fuse-ld=mold"]

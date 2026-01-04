@@ -1,0 +1,17 @@
+[settings]
+os=Linux
+arch=x86_64
+compiler=gcc
+compiler.version=15
+compiler.cppstd=23
+compiler.libcxx=libstdc++11
+
+[conf]
+# Use custom-built GCC
+tools.build:compiler_executables={"c": "/usr/local/bin/gcc", "cpp": "/usr/local/bin/g++"}
+
+# Set toolchain for ranlib and ar wrappers / LTO
+tools.cmake.cmaketoolchain:user_toolchain=["~/.conan2/profiles/zz_gcc15_ar_ranlib.cmake"]
+
+# Always use Ninja
+tools.cmake.cmaketoolchain:generator=Ninja
