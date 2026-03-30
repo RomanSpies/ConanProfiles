@@ -15,3 +15,14 @@ tools.cmake.cmaketoolchain:user_toolchain=["~/.conan2/profiles/zz_gcc15_ar_ranli
 
 # Always use Ninja
 tools.cmake.cmaketoolchain:generator=Ninja
+
+[platform_tool_requires]
+m4/1.4.19
+
+[buildenv]
+CC=/usr/local/bin/gcc
+CXX=/usr/local/bin/g++
+AR=/usr/local/bin/gcc-ar
+RANLIB=/usr/local/bin/gcc-ranlib
+NM=/usr/local/bin/gcc-nm
+

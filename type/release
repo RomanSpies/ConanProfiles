@@ -2,8 +2,8 @@
 build_type=Release
 
 [conf]
-tools.build:cxxflags=["-O2", "-flto", "-fuse-ld=mold"]
-tools.build:cflags=["-O2", "-flto", "-fuse-ld=mold"]
+tools.build:cxxflags=["-O2", "-flto=auto", "-fuse-ld=mold"]
+tools.build:cflags=["-O2", "-flto=auto", "-fuse-ld=mold"]
 
-tools.build:sharedlinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto", "-fuse-ld=mold"]
-tools.build:exelinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto", "-fuse-ld=mold"]
+tools.build:sharedlinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto=auto", "-fuse-ld=mold"]
+tools.build:exelinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto=auto", "-fuse-ld=mold"]
