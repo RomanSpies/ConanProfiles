@@ -1,0 +1,4 @@
+[conf]
+tools.build:cxxflags+=["-fwhole-program-vtables"]
+tools.build:sharedlinkflags+=["-fwhole-program-vtables"]
+tools.build:exelinkflags+=["-fwhole-program-vtables"]

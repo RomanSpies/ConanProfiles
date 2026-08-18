@@ -1,0 +1,8 @@
+[settings]
+build_type=Release
+
+[conf]
+tools.build:cxxflags=["-O2", "-flto", "-stdlib=libc++"]
+tools.build:cflags=["-O2", "-flto"]
+tools.build:sharedlinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto", "-stdlib=libc++", "-rtlib=compiler-rt", "-unwindlib=libunwind", "-fuse-ld=lld"]
+tools.build:exelinkflags=["-Wl,-O2", "-Wl,--as-needed", "-flto", "-stdlib=libc++", "-rtlib=compiler-rt", "-unwindlib=libunwind", "-fuse-ld=lld"]

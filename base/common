@@ -2,27 +2,27 @@
 os=Linux
 arch=x86_64
 compiler=gcc
-compiler.version=15
+compiler.version=16
 compiler.cppstd=23
 compiler.libcxx=libstdc++11
 
 [conf]
-# Use custom-built GCC
-tools.build:compiler_executables={"c": "/usr/local/bin/gcc", "cpp": "/usr/local/bin/g++"}
-
+# Use custom-built GCC 16.2.0 (/opt/gcc-16)
+tools.build:compiler_executables={"c": "/opt/gcc-16/bin/gcc", "cpp": "/opt/gcc-16/bin/g++"}
 # Set toolchain for ranlib and ar wrappers / LTO
-tools.cmake.cmaketoolchain:user_toolchain=["~/.conan2/profiles/zz_gcc15_ar_ranlib.cmake"]
-
+tools.cmake.cmaketoolchain:user_toolchain=["~/.conan2/profiles/zz_gcc16_ar_ranlib.cmake"]
 # Always use Ninja
 tools.cmake.cmaketoolchain:generator=Ninja
+benchmark/*:tools.cmake.cmaketoolchain:extra_variables={"HAVE_STD_REGEX": "ON", "RUN_HAVE_STD_REGEX": "0"}
+libaio/*:tools.build:cflags+=["-fno-lto"]
+libaio/*:tools.build:sharedlinkflags+=["-fno-lto"]
 
 [platform_tool_requires]
 m4/1.4.19
 
 [buildenv]
-CC=/usr/local/bin/gcc
-CXX=/usr/local/bin/g++
-AR=/usr/local/bin/gcc-ar
-RANLIB=/usr/local/bin/gcc-ranlib
-NM=/usr/local/bin/gcc-nm
-
+CC=/opt/gcc-16/bin/gcc
+CXX=/opt/gcc-16/bin/g++
+AR=/opt/gcc-16/bin/gcc-ar
+RANLIB=/opt/gcc-16/bin/gcc-ranlib
+NM=/opt/gcc-16/bin/gcc-nm

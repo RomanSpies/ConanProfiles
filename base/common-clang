@@ -1,0 +1,26 @@
+[settings]
+os=Linux
+arch=x86_64
+compiler=clang
+compiler.version=22
+compiler.cppstd=23
+compiler.libcxx=libc++
+
+[conf]
+# Use custom-built Clang 22.x (/usr/local)
+tools.build:compiler_executables={"c": "/opt/clang-22/bin/clang", "cpp": "/opt/clang-22/bin/clang++"}
+# Set toolchain for llvm-ar / llvm-ranlib wrappers / LTO
+tools.cmake.cmaketoolchain:user_toolchain=["~/.conan2/profiles/zz_clang22_ar_ranlib.cmake"]
+# Always use Ninja
+tools.cmake.cmaketoolchain:generator=Ninja
+benchmark/*:tools.cmake.cmaketoolchain:extra_variables={"HAVE_STD_REGEX": "ON", "RUN_HAVE_STD_REGEX": "0"}
+
+[platform_tool_requires]
+m4/1.4.19
+
+[buildenv]
+CC=/opt/clang-22/bin/clang
+CXX=/opt/clang-22/bin/clang++
+AR=/opt/clang-22/bin/llvm-ar
+RANLIB=/opt/clang-22/bin/llvm-ranlib
+NM=/opt/clang-22/bin/llvm-nm
